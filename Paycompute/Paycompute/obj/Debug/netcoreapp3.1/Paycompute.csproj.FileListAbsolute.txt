@@ -158,3 +158,4 @@ C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute\bin\Debu
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute\obj\Debug\netcoreapp3.1\Paycompute.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute\obj\Debug\netcoreapp3.1\Paycompute.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs

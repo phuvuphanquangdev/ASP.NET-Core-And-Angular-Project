@@ -36,7 +36,7 @@ namespace Paycompute
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddScoped<IEmployeeService, IEmployeeService>();
+            //services.AddScoped<IEmployeeService, IEmployeeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,3 +5,4 @@ C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute.Entity\o
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp3.1\Paycompute.Entity.AssemblyInfo.cs
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp3.1\Paycompute.Entity.dll
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp3.1\Paycompute.Entity.pdb
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp3.1\Paycompute.Entity.csprojAssemblyReference.cache

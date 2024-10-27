@@ -29,6 +29,23 @@ namespace DatingApp.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers([FromQuery]UserParms userParms)
         {
+            //var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            //var userFromRepo = await _repo.GetUser(currentUserId);
+
+            //userParms.UserId = currentUserId;
+
+            //if (string.IsNullOrEmpty(userParms.Gender))
+            //{
+            //    userParms.Gender = userFromRepo.Gender == "male" ? "female" : "male";
+            //}
+
+            //optional...
+            if (string.IsNullOrEmpty(userParms.Gender))
+            {
+                userParms.Gender = "male";
+            }//
+
+
             var users = await _repo.GetUsers(userParms);
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
 

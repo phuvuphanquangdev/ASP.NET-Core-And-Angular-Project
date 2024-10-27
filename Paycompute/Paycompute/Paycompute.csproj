@@ -12,4 +12,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Paycompute.Entity\Paycompute.Entity.csproj" />
+    <ProjectReference Include="..\Paycompute.Services\Paycompute.Services.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4438,6 +4438,26 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Paycompute.Entity/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/Paycompute.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Paycompute.Entity.dll": {}
+        }
+      },
+      "Paycompute.Services/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/Paycompute.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Paycompute.Services.dll": {}
+        }
       }
     }
   },
@@ -12083,13 +12103,25 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Paycompute.Entity/1.0.0": {
+      "type": "project",
+      "path": "../Paycompute.Entity/Paycompute.Entity.csproj",
+      "msbuildProject": "../Paycompute.Entity/Paycompute.Entity.csproj"
+    },
+    "Paycompute.Services/1.0.0": {
+      "type": "project",
+      "path": "../Paycompute.Services/Paycompute.Services.csproj",
+      "msbuildProject": "../Paycompute.Services/Paycompute.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "Paycompute.Entity >= 1.0.0",
+      "Paycompute.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12121,7 +12153,14 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj"
+            },
+            "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Services\\Paycompute.Services.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Services\\Paycompute.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -12164,5 +12203,25 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Paycompute.Entity is not compatible with netcoreapp2.2 (.NETCoreApp,Version=v2.2). Project Paycompute.Entity supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Paycompute.Entity",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Paycompute.Services is not compatible with netcoreapp2.2 (.NETCoreApp,Version=v2.2). Project Paycompute.Services supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Paycompute.Services",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }

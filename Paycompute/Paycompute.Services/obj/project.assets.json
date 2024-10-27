@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Paycompute.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Paycompute.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Paycompute.Entity.dll": {}
+        }
+      },
+      "Paycompute.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Paycompute.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Paycompute.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Paycompute.Persistence.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Paycompute.Entity/1.0.0": {
+      "type": "project",
+      "path": "../Paycompute.Entity/Paycompute.Entity.csproj",
+      "msbuildProject": "../Paycompute.Entity/Paycompute.Entity.csproj"
+    },
+    "Paycompute.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../Paycompute.Persistence/Paycompute.Persistence.csproj",
+      "msbuildProject": "../Paycompute.Persistence/Paycompute.Persistence.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Paycompute.Entity >= 1.0.0",
+      "Paycompute.Persistence >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
@@ -36,7 +74,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj"
+            },
+            "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Persistence\\Paycompute.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET Core Project\\Paycompute\\Paycompute.Persistence\\Paycompute.Persistence.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

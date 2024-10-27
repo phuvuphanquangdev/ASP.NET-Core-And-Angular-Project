@@ -36,7 +36,7 @@ namespace CourseLibrary.API.Controllers
         public ActionResult<IEnumerable<CourseDto>> GetCoursesForAuthor(Guid authorId)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
-                NotFound();
+                return NotFound();
 
             var coursesForAuthorFromDto = _courseLibraryRepository.GetCourses(authorId);
 
@@ -49,7 +49,7 @@ namespace CourseLibrary.API.Controllers
         public ActionResult<CourseDto> GetCourseForAuthor(Guid authorId, Guid courseId)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
-                NotFound();
+                return NotFound();
 
             var courseForAuthorFromDto = _courseLibraryRepository.GetCourse(authorId, courseId);
 
@@ -65,7 +65,7 @@ namespace CourseLibrary.API.Controllers
         public ActionResult<CourseDto> CreateCourseForAuthor(Guid authorId, CourseForCreationDto courseForCreationDto)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
-                NotFound();
+                return NotFound();
 
             var courseEntity = _mapper.Map<Course>(courseForCreationDto);
             _courseLibraryRepository.AddCourse(authorId, courseEntity);
@@ -82,7 +82,7 @@ namespace CourseLibrary.API.Controllers
         
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
-                NotFound();
+                return NotFound();
 
             var courseForAuthorFromRepo = _courseLibraryRepository.GetCourse(authorId, courseId);
 
@@ -115,7 +115,7 @@ namespace CourseLibrary.API.Controllers
             JsonPatchDocument<CourseForUpdateDto> patchDocument)
         {
             if (!_courseLibraryRepository.AuthorExists(authorId))
-                NotFound();
+                return NotFound();
 
             var courseForAuthorFromRepo = _courseLibraryRepository.GetCourse(authorId, courseId);
 
@@ -155,6 +155,23 @@ namespace CourseLibrary.API.Controllers
 
             _courseLibraryRepository.UpdateCourse(courseForAuthorFromRepo);
 
+            _courseLibraryRepository.Save();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{courseId}")]
+        public ActionResult DeleteCourseForAuthor(Guid authorId, Guid courseId)
+        {
+            if (!_courseLibraryRepository.AuthorExists(authorId))
+                return NotFound();
+
+            var courseForAuthorFromRepo = _courseLibraryRepository.GetCourse(authorId, courseId);
+
+            if (courseForAuthorFromRepo == null)
+                return NotFound();
+
+            _courseLibraryRepository.DeleteCourse(courseForAuthorFromRepo);
             _courseLibraryRepository.Save();
 
             return NoContent();

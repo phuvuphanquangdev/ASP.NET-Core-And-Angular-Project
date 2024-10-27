@@ -7,11 +7,11 @@ using CourseLibrary.API.ValidationAttributes;
 
 namespace CourseLibrary.API.Models
 {
-    [CourseTitleMustBeDifferentFromDescription]
+    [CourseTitleMustBeDifferentFromDescription(ErrorMessage = "Title must be different from description.")]
     public class CourseForCreationDto //: IValidatableObject
     {
-        [Required]
-        [MaxLength(100)]
+        [Required(ErrorMessage = "You should fill out the title")]
+        [MaxLength(100, ErrorMessage = "The title shouldn't have more than 100 characters")]
         public string Title { get; set; }
         [MaxLength(1500)]
         public string Description { get; set; }

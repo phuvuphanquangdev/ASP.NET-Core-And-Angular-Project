@@ -6,10 +6,6 @@
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
 @import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 
-/* ===========
-Snippet for styles.css to style the tabs component
-=========== */
-
 .tab-panel {
     border: 1px solid #ddd;
     padding: 10px;
@@ -55,7 +51,3 @@ Snippet for styles.css to style the tabs component
     border-top: 1px solid #eee;
     padding: 15px 0;
   }
-
-  /* ===========
-    End of Snippet for styles.css to style the tabs component
-    =========== */

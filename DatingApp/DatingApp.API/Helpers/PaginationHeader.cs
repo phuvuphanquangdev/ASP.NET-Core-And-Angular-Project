@@ -1,8 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace DatingApp.API.Helpers
 {
     public class PaginationHeader
@@ -14,10 +9,10 @@ namespace DatingApp.API.Helpers
 
         public PaginationHeader(int currentPage, int itemsPerPage, int totalItems, int totalPages)
         {
-            CurrentPage = currentPage;
-            ItemsPerPage = itemsPerPage;
-            TotalItems = totalItems;
-            TotalPages = totalPages;
+            this.CurrentPage = currentPage;
+            this.ItemsPerPage = itemsPerPage;
+            this.TotalItems = totalItems;
+            this.TotalPages = totalPages;
         }
     }
 }

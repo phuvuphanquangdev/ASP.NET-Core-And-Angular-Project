@@ -1,10 +1,10 @@
-import { AuthService } from './../../_services/auth.service';
-import { UserService } from './../../_services/user.service';
-import { AlertifyService } from './../../_services/alertify.service';
-import { ActivatedRoute } from '@angular/router';
-import { User } from './../../_models/User';
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { User } from '../../_models/user';
+import { ActivatedRoute } from '@angular/router';
+import { AlertifyService } from '../../_services/alertify.service';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../../_services/user.service';
+import { AuthService } from '../../_services/auth.service';
 
 @Component({
   selector: 'app-member-edit',
@@ -12,23 +12,18 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./member-edit.component.css']
 })
 export class MemberEditComponent implements OnInit {
-  @ViewChild('editForm', {static: true}) editForm: NgForm;
+  @ViewChild('editForm') editForm: NgForm;
   user: User;
   photoUrl: string;
-
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
-    if(this.editForm.dirty){
+    if (this.editForm.dirty) {
       $event.returnValue = true;
     }
   }
 
-  constructor(
-    private route: ActivatedRoute,
-    private alertify: AlertifyService,
-    private userService: UserService,
-    private authService: AuthService
-  ) { }
+  constructor(private route: ActivatedRoute, private alertify: AlertifyService,
+    private userService: UserService, private authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -38,18 +33,15 @@ export class MemberEditComponent implements OnInit {
   }
 
   updateUser() {
-    this.userService.updateUser(this.authService.decodedToken.nameid, this.user)
-      .subscribe(next => {
-        this.alertify.success('Profile updated succesfully');
-        this.editForm.reset(this.user);
+    this.userService.updateUser(this.authService.decodedToken.nameid, this.user).subscribe(next => {
+      this.alertify.success('Profile updated successfully');
+      this.editForm.reset(this.user);
     }, error => {
       this.alertify.error(error);
     });
-
   }
 
-  updateMainPhoto(photoUrl){
+  updateMainPhoto(photoUrl) {
     this.user.photoUrl = photoUrl;
   }
-
 }

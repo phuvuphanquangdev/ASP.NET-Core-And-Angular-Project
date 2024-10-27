@@ -9,7 +9,7 @@ import { AuthService } from './_services/auth.service';
 import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -64,6 +64,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       TabsModule.forRoot(),
       NgxGalleryModule,
       FileUploadModule,
+      ReactiveFormsModule,
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config: {

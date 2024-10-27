@@ -127,3 +127,5 @@ C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.AP
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.genruntimeconfig.cache

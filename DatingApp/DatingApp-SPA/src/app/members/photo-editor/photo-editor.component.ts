@@ -1,3 +1,5 @@
+import { AlertifyService } from './../../_services/alertify.service';
+import { UserService } from './../../_services/user.service';
 import { AuthService } from './../../_services/auth.service';
 import { environment } from './../../../environments/environment';
 import { Photo } from './../../_models/Photo';
@@ -18,7 +20,9 @@ export class PhotoEditorComponent implements OnInit {
  
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private userService: UserService,
+    private alertify: AlertifyService
   ) { }
 
   ngOnInit() {
@@ -55,6 +59,14 @@ export class PhotoEditorComponent implements OnInit {
         this.photos.push(photo);
       }
     }
+  }
+
+  setMainPhoto(photo: Photo){
+    this.userService.setMainPhoto(this.authService.decodedToken.nameid, photo.id).subscribe( () => {
+      console.log('Set main successfully.');
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
 }

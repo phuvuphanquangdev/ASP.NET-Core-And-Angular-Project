@@ -96,7 +96,7 @@ namespace DatingApp.API.Controllers
             if (await _repo.SaveAll())
             {
                 var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
-                return CreatedAtRoute("GetPhoto", new { id = photo.Id });
+                return CreatedAtRoute("GetPhoto", new { id = photo.Id }, photoToReturn);
                 //return  Ok(photoToReturn);
             }
 
@@ -129,6 +129,47 @@ namespace DatingApp.API.Controllers
                 return NoContent();
 
             return BadRequest("Could set photo to main");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePhoto(int userId, int id)
+        {
+            //if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            //    return Unauthorized();
+
+            var user = await _repo.GetUser(userId);
+
+            if (!user.Photos.Any(p => p.Id == id))
+                return Unauthorized();
+
+            var photoFromRepo = await _repo.GetPhoto(id);
+
+            if (photoFromRepo.IsMain)
+                return BadRequest("You can not delete main photo");
+
+            //if the photo is in cloudinary....
+            if (photoFromRepo.PublicId != null)
+            {
+                var deleteParms = new DeletionParams(photoFromRepo.PublicId);
+
+                var result = await _cloudinary.DestroyAsync(deleteParms);
+
+                if (result.Result == "ok")
+                {
+                    _repo.Delete(photoFromRepo);
+                }
+            }
+
+            //if photo is not in cloudinary....
+            if (photoFromRepo.PublicId == null)
+            {
+                _repo.Delete(photoFromRepo);
+            }
+
+            if (await _repo.SaveAll())
+                return Ok();
+
+            return BadRequest("Failed to delete photo");
         }
 
 

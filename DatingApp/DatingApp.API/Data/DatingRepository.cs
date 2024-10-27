@@ -104,14 +104,43 @@ namespace DatingApp.API.Data
             return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public Task<PagedList<Message>> GetMessagesForUser()
+        public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            throw new NotImplementedException();
+            var message = _context.Messages
+                .Include(u => u.Sender).ThenInclude(p => p.Photos)
+                .Include(u => u.Recipient).ThenInclude(p => p.Photos)
+                .AsQueryable();
+
+            switch (messageParams.MessageContainer)
+            {
+                case "Inbox":
+                    message = message.Where(u => u.RecipientId == messageParams.UserId);
+                    break;
+                case "Outbox":
+                    message = message.Where(u => u.SenderId == messageParams.UserId);
+                    break;
+                default:
+                    message = message.Where(u => u.RecipientId == messageParams.UserId && u.IsRead == false);
+                    break;
+            }
+
+            message = message.OrderByDescending(d => d.MessageSent);
+
+            return await PagedList<Message>.CreateAsync(message, messageParams.PageNumber, messageParams.PageSize);
         }
 
-        public Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        
+
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
-            throw new NotImplementedException();
+            var message = await _context.Messages
+                .Include(u => u.Sender).ThenInclude(p => p.Photos)
+                .Include(u => u.Recipient).ThenInclude(p => p.Photos)
+                .Where(m => m.RecipientId == userId && m.SenderId == recipientId ||
+                            m.RecipientId == recipientId && m.SenderId == userId)
+                .OrderByDescending(m => m.MessageSent).ToListAsync();
+
+            return message;
         }
 
         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)

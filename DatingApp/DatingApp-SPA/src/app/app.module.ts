@@ -13,7 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery';
-import { BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDatepickerModule, PaginationModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -68,6 +68,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       NgxGalleryModule,
       BrowserAnimationsModule,
       BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
       FileUploadModule,
       ReactiveFormsModule,
       RouterModule.forRoot(appRoutes),

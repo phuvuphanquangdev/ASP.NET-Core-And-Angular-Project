@@ -117,6 +117,9 @@ C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.AP
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.dll
 C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.pdb
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Lenovo\source\repos\ASP.NET Core Project\CourseLibrary\CourseLibrary.API\obj\Debug\netcoreapp3.1\CourseLibrary.API.MvcApplicationPartsAssemblyInfo.cache
